@@ -77,4 +77,6 @@ public class MeuArrayList<T> {
         return trimmed;
     }
 
+    public int tamanho(){ return tamanho;}
+
 }
