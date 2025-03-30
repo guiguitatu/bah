@@ -3,9 +3,8 @@ import java.awt.image.BufferedImage;
 public class FloodFillAnimationFila extends FloodFill {
     private MinhaFila<PixelPosition> container;
 
-    public FloodFillAnimationFila(BufferedImage image, int startX, int startY, int newColor) {
-        // Delay de 500 ms e processa 5000 passos por tick (valores que você pode ajustar)
-        super(image, startX, startY, newColor, 500, 5000);
+    public FloodFillAnimationFila(BufferedImage image, int newColor, int delay, int stepsPerTick) {
+        super(image, newColor, delay, stepsPerTick);
     }
 
     @Override
@@ -16,7 +15,7 @@ public class FloodFillAnimationFila extends FloodFill {
 
     @Override
     protected boolean isContainerEmpty() {
-        return container.isEmpty();
+        return container == null || container.isEmpty();
     }
 
     @Override

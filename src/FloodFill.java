@@ -8,16 +8,25 @@ import javax.swing.Timer;
 
 public abstract class FloodFill extends JPanel {
     protected final BufferedImage image;
-    protected final int targetColor;
+    protected int targetColor;
     protected final int newColor;
-    protected final Timer timer;
+    protected Timer timer;
+    protected final int delay;
+    protected final int stepsPerTick;
+    protected boolean floodFillStarted = false;
 
-    public FloodFill(BufferedImage image, int startX, int startY, int newColor, int delay, int stepsPerTick) {
+    public FloodFill(BufferedImage image, int newColor, int delay, int stepsPerTick) {
         this.image = image;
         this.newColor = newColor;
-        this.targetColor = image.getRGB(startX, startY);
-        initContainer(startX, startY);
+        this.delay = delay;
+        this.stepsPerTick = stepsPerTick;
+    }
 
+    protected void startFloodFill(int startX, int startY) {
+        if (floodFillStarted) return;
+        floodFillStarted = true;
+        targetColor = image.getRGB(startX, startY);
+        initContainer(startX, startY);
         timer = new Timer(delay, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -44,7 +53,6 @@ public abstract class FloodFill extends JPanel {
         addNeighbors(x, y);
     }
 
-    // Métodos abstratos para as operações com o container.
     protected abstract void initContainer(int startX, int startY);
     protected abstract boolean isContainerEmpty();
     protected abstract PixelPosition removeNext();
