@@ -1,3 +1,5 @@
+package FloodFill;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -5,7 +7,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
-public class Main {
+public class FloodMain {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             try {
@@ -17,7 +19,7 @@ public class Main {
                 FloodFill panel;
                 // Para aumentar a velocidade de preenchimento trocar o quarto parâmetro, quanto maior mais rápido;
                 panel = new FloodFillAnimationPilha(image, newColor, 500, 10000);
-                //panel = new FloodFillAnimationFila(image, newColor, 500, 10000);
+                //panel = new FloodFill.FloodFill.FloodFillAnimationFila(image, newColor, 500, 10000);
 
                 panel.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
