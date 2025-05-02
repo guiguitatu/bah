@@ -74,17 +74,5 @@ public class SwingTreeViewer extends JPanel {
                 y + labelHeight / 2 - 2);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            // Usa a mesma árvore de encode/decode
-            ArvoreRecursiva tree = new ArvoreRecursiva();
 
-            JFrame frame = new JFrame("Visualizador Árvore Morse (Swing)");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.add(new SwingTreeViewer(tree.getRoot()));
-            frame.setSize(1000, 600);
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-        });
-    }
 }

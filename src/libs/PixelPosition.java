@@ -1,3 +1,5 @@
+package libs;
+
 public class PixelPosition {
     public int x;
     public int y;

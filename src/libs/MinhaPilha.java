@@ -1,5 +1,7 @@
+package libs;
+
 public class MinhaPilha<T> {
-    private No<T> top;
+    private NoNext<T> top;
 
     public MinhaPilha() {
         top = null;
@@ -10,9 +12,9 @@ public class MinhaPilha<T> {
     }
 
     public void push(T data) {
-        No<T> newNo = new No<>(data);
-        newNo.next = top;
-        top = newNo;
+        NoNext<T> newNoNext = new NoNext<>(data);
+        newNoNext.next = top;
+        top = newNoNext;
     }
 
     public T pop() {

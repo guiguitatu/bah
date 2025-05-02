@@ -1,11 +1,11 @@
 package libs;
 
-public class Node<T> {
+public class Root<T> {
     public T data;
-    public Node<T> left;   // “.”
-    public Node<T> right;  // “-”
+    public Root<T> left;   // “.”
+    public Root<T> right;  // “-”
 
-    public Node(T data) {
+    public Root(T data) {
         this.data = data;
         this.left = null;
         this.right = null;

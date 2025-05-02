@@ -1,3 +1,7 @@
+package FloodFill;
+import libs.PixelPosition;
+import libs.MinhaPilha;
+
 import java.awt.image.BufferedImage;
 
 public class FloodFillAnimationPilha extends FloodFill {

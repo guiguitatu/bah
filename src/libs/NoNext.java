@@ -1,10 +1,10 @@
 package libs;
 
-public class No<T> {
+public class NoNext<T> {
     public T data;
-    public No<T> next;
+    public NoNext<T> next;
 
-    public No(T data) {
+    public NoNext(T data) {
         this.data = data;
         this.next = null;
     }

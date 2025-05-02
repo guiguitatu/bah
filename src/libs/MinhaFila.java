@@ -1,6 +1,8 @@
+package libs;
+
 public class MinhaFila<T> {
-    private No<T> front;
-    private No<T> rear;
+    private NoNext<T> front;
+    private NoNext<T> rear;
 
     public MinhaFila() {
         front = null;
@@ -12,10 +14,10 @@ public class MinhaFila<T> {
     }
 
     public void enQueue(T data) {
-        No<T> newNo = new No<>(data);
-        if (isEmpty()) front = newNo;
-        else rear.next = newNo;
-        rear = newNo;
+        NoNext<T> newNoNext = new NoNext<>(data);
+        if (isEmpty()) front = newNoNext;
+        else rear.next = newNoNext;
+        rear = newNoNext;
     }
 
     public T deQueue() {
