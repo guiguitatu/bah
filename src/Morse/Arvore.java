@@ -63,7 +63,10 @@ public class Arvore {
             return decode(code, idx + 1, node.right);
     }
 
-    /** Decodifica frase inteira (letras por espaço, palavras por '/') */
+    /** Decodifica frase inteira (letras por espaço, palavras por '/')
+     * @return --. --- --- -.. >>> GOOD
+     * @param morseMessage código morse a ser decodificado
+     * */
     public String decode(String morseMessage) {
         StringBuilder sb = new StringBuilder();
         for (String word : morseMessage.trim().split("\\s*/\\s*")) {
@@ -97,7 +100,10 @@ public class Arvore {
         return encode(target, node.right, path + "-");
     }
 
-    /** Codifica frase inteira (letras por espaço, palavras por '/') */
+    /** Codifica frase inteira (letras por espaço, palavras por '/')
+     * @param text texto a ser codificado
+     * @return -... -. .... >>> BAH
+     * */
     public String encode(String text) {
         StringBuilder sb = new StringBuilder();
         String[] words = text.trim().toUpperCase().split("\\s+");

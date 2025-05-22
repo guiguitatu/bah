@@ -36,6 +36,21 @@ public class Main {
         tree.insert("-..-", 'X');
         tree.insert("-.--", 'Y');
         tree.insert("--..", 'Z');
+        tree.insert("-----", '0');
+        tree.insert(".----", '1');
+        tree.insert("..---", '2');
+        tree.insert("...--", '3');
+        tree.insert("....-", '4');
+        tree.insert(".....", '5');
+        tree.insert("-....", '6');
+        tree.insert("--...", '7');
+        tree.insert("---..", '8');
+        tree.insert("----.", '9');
+        tree.insert(".-.-.-", '.');
+        tree.insert("-..-.", '/');
+        tree.insert("-....-", '-');
+        tree.insert("-...-", '=');
+        tree.insert(".-.-.", '+');
 
         System.out.println("Gostaria de Imprimir a Árvore Morse? (s/n)");
         String lindonjohnson = scanner.nextLine();
@@ -46,7 +61,7 @@ public class Main {
             JFrame frame = new JFrame("Árvore Morse");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.add(new SwingTreeViewer(tree.getRoot()));
-            frame.setSize(1000, 600);
+            frame.setSize(1400, 600);
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
         });}
