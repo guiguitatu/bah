@@ -15,7 +15,7 @@ public class MeuArrayList<T> {
         tamanho = 0;
     }
 
-    public void aumentarTamanho() {
+    private void aumentarTamanho() {
         int novaCapacidade = tamanho * 2;
         Object[] lindonjohnson = new Object[novaCapacidade];
         if (tamanho >= 0) System.arraycopy(lista, 0, lindonjohnson, 0, tamanho);
