@@ -1,9 +1,13 @@
 package HashLib;
 
 /**
- * Tabela hash com bit‑mixing adaptado para 16 buckets.
+ * Tabela hash com bit-mixing, adaptado para capacity potência de 2.
  */
 public class BitMixHashTable<K> extends AbstractHashTable<K> {
+    public BitMixHashTable() {
+        super();
+    }
+
     @Override
     protected int hash(K key) {
         if (key == null) return 0;
@@ -11,6 +15,6 @@ public class BitMixHashTable<K> extends AbstractHashTable<K> {
         h ^= (h >>> 16);
         h ^= (h >>> 7);
         h ^= (h >>> 4);
-        return h & (capacity - 1);  // máscara 0xF
+        return h & (capacity - 1); // máscara rápida para potência de 2
     }
 }

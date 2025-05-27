@@ -60,9 +60,9 @@ public class Main {
             System.out.printf("Tempo busca:    %.3f ms\n", (endSearchBM - startSearchBM) / 1_000_000.0);
             System.out.println("Colisões por bucket (clusterização):");
             int[] distBM = bitMix.getDistribution();
-            for (int i = 0; i < distBM.length; i++) {
-                System.out.printf("  Bucket %2d: %d entradas\n", i, distBM[i]);
-            }
+//            for (int i = 0; i < distBM.length; i++) {
+//                System.out.printf("  Bucket %2d: %d entradas\n", i, distBM[i]);
+//            }
             System.out.println();
 
             // Fibonacci
@@ -72,9 +72,11 @@ public class Main {
             System.out.printf("Tempo busca:    %.3f ms\n", (endSearchFH - startSearchFH) / 1_000_000.0);
             System.out.println("Colisões por bucket (clusterização):");
             int[] distFH = fibo.getDistribution();
-            for (int i = 0; i < distFH.length; i++) {
-                System.out.printf("  Bucket %2d: %d entradas\n", i, distFH[i]);
-            }
+//            for (int i = 0; i < distFH.length; i++) {
+//                System.out.printf("  Bucket %2d: %d entradas\n", i, distFH[i]);
+//            }
+
+            System.out.println(fibo.contains("Maria")); // Exemplo de busca
 
         } catch (IOException e) {
             System.err.println("Erro ao ler arquivo: " + e.getMessage());
